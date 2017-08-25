@@ -74,9 +74,7 @@
     // Determine whether rotation should be enabled for this device
     // Per iOS HIG, landscape is only supported on iPad and iPhone 6+
     CDV_iOSDevice device = [self getCurrentDevice];
-    BOOL autorotateValue = (device.iPad || device.iPhone6Plus || device.iPhoneX) ?
-        [(CDVViewController *)self.viewController shouldAutorotateDefaultValue] :
-        NO;
+    BOOL autorotateValue = [(CDVViewController *)self.viewController shouldAutorotateDefaultValue];
 
     [(CDVViewController *)self.viewController setEnabledAutorotation:autorotateValue];
 
