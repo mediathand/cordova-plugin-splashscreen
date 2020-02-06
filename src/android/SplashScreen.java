@@ -255,6 +255,10 @@ public class SplashScreen extends CordovaPlugin {
                         splashDialog = null;
                         splashImageView = null;
                     }
+
+                    if (!forceHideImmediately && !cordova.getActivity().getWindow().getDecorView().hasFocus()) {
+                        cordova.getActivity().getWindow().getDecorView().requestFocus();
+                    }
                 }
             }
         });
